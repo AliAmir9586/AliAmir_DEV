@@ -684,79 +684,6 @@ section,
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-/* .hero {
-  width: 100%;
-  min-height: 100vh;
-  position: relative;
-  padding: 80px 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero img {
-  position: absolute;
-  inset: 0;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 1;
-}
-
-.hero .container {
-  position: relative;
-  z-index: 3;
-}
-
-.hero h2 {
-  margin: 0;
-  font-size: 64px;
-  font-weight: 700;
-}
-
-.hero p {
-  margin: 5px 0 0 0;
-  font-size: 26px;
-}
-
-.hero p span {
-  letter-spacing: 1px;
-  border-bottom: 2px solid var(--accent-color);
-}
-
-.hero .social-links {
-  margin-top: 25px;
-}
-
-.hero .social-links a {
-  background-color: color-mix(in srgb, var(--default-color), transparent 90%);
-  color: var(--default-color);
-  font-size: 14px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  margin-right: 20px;
-  transition: 0.3s;
-}
-
-.hero .social-links a:hover {
-  background-color: var(--accent-color);
-}
-
-@media (max-width: 768px) {
-  .hero h2 {
-    font-size: 32px;
-  }
-
-  .hero p {
-    font-size: 20px;
-  }
-} */
-
 /* Hero Section Styling */
 .hero {
   width: 100%;
@@ -777,6 +704,7 @@ section,
   max-width: 1200px; /* Prevents content from stretching too wide */
   width: 100%;
   margin: 0 auto;
+ 
 }
 
 .left-side {
@@ -829,11 +757,11 @@ section,
 }
 
 .right-side img {
-  width: 100%; /* Full width for image */
+  width: 80%; /* Full width for image */
   height: auto; /* Adjusts the height automatically */
    max-height: 500px;/* Optional: Limit max height for image */
   object-fit: cover; /* Ensures the image covers the area while maintaining aspect ratio */
-  border-radius: 10px; /* Optional: Adds rounded corners */
+  border-radius: 300px; /* Optional: Adds rounded corners */
 }
 
 /* Responsive Design */
@@ -845,30 +773,75 @@ section,
     text-align: center; /* Center text for small screens */
   }
 
-  .left-side {
-    max-width: 100%;
-    padding-right: 0;
-    margin-bottom: 30px; /* Adds margin between sections */
-  }
 
-  .right-side img {
-    max-height: 400px; /* Adjust image size for smaller screens */
-  }
 
-  .left-side h2 {
-    font-size: 32px; /* Smaller heading on mobile */
-  }
 
-  .left-side p {
-    font-size: 20px; /* Smaller text on mobile */
+  @media (max-width: 768px) {
+    /* Stack the text and image vertically on small screens */
+    .hero {
+      flex-direction: column; /* Stack the content vertically */
+      text-align: center; /* Center text for mobile */
+      padding: 60px 15px; /* Adjust padding to ensure spacing */
+    }
+  
+    .container {
+      display: flex;
+      flex-direction: column; /* Stack the image and text vertically */
+      align-items: center; /* Center align the elements */
+      width: 100%;
+      justify-content: center;
+    }
+  
+    /* Ensure the image comes first */
+    .right-side {
+      order: 1; /* Position the image first */
+      max-width: 100%;
+      text-align: center;
+      margin-bottom: 20px; /* Add spacing between image and text */
+    }
+  
+    .left-side {
+      order: 2; /* Position the text below the image */
+      max-width: 100%;
+      padding-right: 0;
+      text-align: center; /* Center text */
+    }
+  
+    .right-side img {
+      max-height: 400px; /* Adjust image size for smaller screens */
+      width: 100%; /* Limit the width */
+      border-radius: 200px; /* Optional: rounded corners */
+    }
+  
+    .left-side h2 {
+      font-size: 32px; /* Adjust heading size for mobile */
+      margin-bottom: 10px; /* Add space between heading and paragraph */
+    }
+  
+    .left-side p {
+      font-size: 20px; /* Adjust paragraph size for mobile */
+      margin-bottom: 10px; /* Add space between paragraph and social links */
+    }
+  
+    .left-side .social-links {
+      margin-top: 20px; /* Add space between paragraph and social links */
+    }
+  
+    .left-side .social-links a {
+      width: 35px; /* Smaller social icons */
+      height: 35px;
+      margin-right: 10px; /* Reduce margin between social icons */
+    }
   }
+  
 
-  .left-side .social-links a {
-    width: 35px; /* Smaller social icons */
-    height: 35px;
-  }
+
+
+  
+  
+
+  
 }
-
 
 /*--------------------------------------------------------------
 # About Section
